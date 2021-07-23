@@ -1,10 +1,11 @@
-package com.study.kotlin.Model.Account;
+package com.study.kotlin.Model;
+
+
 
 abstract class Account(
   open val number:Int,
   open val agency:String,
-  private var balance: Double = 0.0
-){
+  private var balance: Double = 0.0){
 
   abstract fun rate(): Double
 
