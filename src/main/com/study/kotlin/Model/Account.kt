@@ -11,4 +11,10 @@ abstract class Account(
   open fun checkBalance(value: Double):Boolean {
     return (balance >= value);
   }
+
+  open fun getBalance():Double {
+    return balance;
+  }
+
+  
 }
