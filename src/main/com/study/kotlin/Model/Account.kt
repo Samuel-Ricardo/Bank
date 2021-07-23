@@ -17,6 +17,25 @@ abstract class Account(
     return balance;
   }
 
+  override fun deposit(value: Double) {
+
+    if (value > 0) {
+        balance += value
+
+        println("")
+        println("- Deposito realizado com sucesso")
+        println("- ")
+        println("- Saldo Atual: $balance")
+        println("")
+    } else {
+
+      println("")
+      println("- Deposito não pode ser 0 ou negativo")
+      println("- Insira um Valor válido")
+      println("")
+    }
+}
+
   override fun withdraw(value:Double){
 
     if(checkBalance(value)) {
