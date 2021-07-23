@@ -1,3 +1,5 @@
+package com.study.kotlin.app
+
 import java.util.Scanner
 
 fun main() {
