@@ -6,4 +6,9 @@ abstract class Account(
   private var balance: Double = 0.0
 ){
 
+  abstract fun taxa(): Double
+
+  open fun checkBalance(value: Double):Boolean {
+    return (balance >= value);
+  }
 }
