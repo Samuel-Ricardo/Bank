@@ -17,7 +17,8 @@ fun main() {
     println("===============================")
     println("")
     println("(1) - Logar na minha conta")
-    println("(2) - Sair")
+    println("(2) - Criar uma conta")
+    println("(3) - Sair")
     println("")
     println("================================")
     println("")
@@ -28,12 +29,19 @@ fun main() {
 
       1 -> println("Serviço Indisponível");
       2 -> {
+        println("")
+        println("Serviço Indisponível");
+        println("")
+      }
+      3 -> {
         online = false
         println("")
       }
 
-      else -> { // Note the block
-
+      else -> {
+        println("")
+        println("Serviço Indisponível ou inexistente, tente outro...");
+        println("")
       }
     }
   }
