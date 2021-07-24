@@ -16,6 +16,15 @@ abstract class Account(
     return (balance >= value);
   }
 
+
+  open fun getNumber():Int {
+    return this.number;
+  }
+
+  open fun getAgency():String {
+    return this.agency;
+  }
+
   open fun getBalance():Double {
     return balance;
   }
@@ -66,22 +75,29 @@ abstract class Account(
 
       destinationAccount.deposit(value)
 
-      println("")
-      println("- Transferencia realizado com sucesso")
-      println("- ")
-      println("- Para a conta: ${destinationAccount.number}")
-      println("- Agencia: ${destinationAccount.agency}")
-      println("- ")
-      println("- Seu Saldo Atual: $balance")
-      println("- ")
-      println("- Saldo Atual do destinatário: ${destinationAccount.getBalance()}")
-      println("")
+      println("""
+      =============================================
+      - Transferencia realizada com sucesso
+      -
+      - Valor transferido: ${value}
+      ---------------------------------------------
+      - Conta de Origem: ${this.number}
+      - Saldo Atual: R$ ${this.getBalance()}
+      -
+      - Conta de Destino: ${destinationAccount.getNumber()}
+      - Saldo Atual: R$ ${destinationAccount.getBalance()}
+      =============================================
+    """.trimIndent())
     } else {
 
-      println("")
-      println("- Saldo Insuficiente :(")
-      println("- Faltam ${balance - value}")
-      println("")
+      println("""
+      =============================================
+      - Transferencia não realizada
+      ---------------------------------------------
+      - Saldo insuficiente
+      - Faltam R$ ${value - this.getBalance()}
+      =============================================
+    """.trimIndent())
     }
   }
 }
