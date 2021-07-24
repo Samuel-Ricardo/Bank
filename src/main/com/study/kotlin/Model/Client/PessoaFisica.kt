@@ -29,4 +29,24 @@ class PessoaFisica(
       =============================================
     """.trimIndent())
   }
+
+  override fun toString():String {
+
+       return """
+       =============================================
+       - Pessoa Física
+       ---------------------------------------------
+       - Nome: ${name}
+       - Idade: ${age}
+       - CPF: ${CPF}
+       ---------------------------------------------
+       - Endereço: ${this.address.city}
+       - CEP: ${this.address.cep}
+       ---------------------------------------------
+       - Conta: ${account.getNumber()}
+       - Saldo Atual: R$ ${account.getBalance()}
+       - Agencia: ${this.account.getAgency()}
+       =============================================
+     """.trimIndent();
+    }
 }
