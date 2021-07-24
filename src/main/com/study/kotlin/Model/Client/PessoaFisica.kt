@@ -23,9 +23,9 @@ class PessoaFisica(
       - Endereço: ${this.address.city}
       - CEP: ${this.address.cep}
       ---------------------------------------------
-      - Conta: ${account.getNumber()}
+      - Conta: ${account.number}
       - Saldo Atual: R$ ${account.getBalance()}
-      - Agencia: ${this.account.getAgency()}
+      - Agencia: ${this.account.agency}
       =============================================
     """.trimIndent())
   }
@@ -43,9 +43,9 @@ class PessoaFisica(
        - Endereço: ${this.address.city}
        - CEP: ${this.address.cep}
        ---------------------------------------------
-       - Conta: ${account.getNumber()}
-       - Saldo Atual: R$ ${account.getBalance()}
-       - Agencia: ${this.account.getAgency()}
+       - Conta: ${account.number}
+      - Saldo Atual: R$ ${account.getBalance()}
+      - Agencia: ${this.account.agency}
        =============================================
      """.trimIndent();
     }

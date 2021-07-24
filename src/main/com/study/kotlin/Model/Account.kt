@@ -4,8 +4,8 @@ import com.study.kotlin.Interface.BankTransition;
 
 abstract class Account(
 
-  open protected val number:Int,
-  open protected val agency:String,
+  open val number:Int,
+  open val agency:String,
   private var balance: Double = 0.0
 
   ): BankTransition {
