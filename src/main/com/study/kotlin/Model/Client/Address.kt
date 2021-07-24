@@ -1,7 +1,7 @@
 package com.study.kotlin.Model;
 
 data class Address(
-  val description:String = null,
+  val description:String = "",
   val street:     String,
   val number:     Int,
   val cep:        String,
