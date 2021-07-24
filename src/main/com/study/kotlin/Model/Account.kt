@@ -3,9 +3,12 @@ package com.study.kotlin.Model;
 import com.study.kotlin.Interface.BankTransition;
 
 abstract class Account(
+
   open protected val number:Int,
   open protected val agency:String,
-  private var balance: Double = 0.0): BankTransition {
+  private var balance: Double = 0.0
+
+  ): BankTransition {
 
   abstract fun rate(): Double
 
@@ -34,7 +37,7 @@ abstract class Account(
       println("- Insira um Valor válido")
       println("")
     }
-}
+  }
 
   override fun withdraw(value:Double){
 
