@@ -8,5 +8,5 @@ interface BankTransition {
 
   fun deposit(value:Double)
 
-  fun transfer(DestinationAccount:Account, value:Double)
+  fun transfer(destinationAccount:Account, value:Double)
 }

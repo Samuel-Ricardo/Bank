@@ -3,8 +3,8 @@ package com.study.kotlin.Model;
 import com.study.kotlin.Interface.BankTransition;
 
 abstract class Account(
-  open val number:Int,
-  open val agency:String,
+  open protected val number:Int,
+  open protected val agency:String,
   private var balance: Double = 0.0): BankTransition {
 
   abstract fun rate(): Double
@@ -55,4 +55,31 @@ abstract class Account(
     }
   }
 
+
+  override fun transfer(destinationAccount:Account, value:Double){
+
+    if(checkBalance(value)) {
+      balance -= value;
+
+      destinationAccount.deposit(value)
+
+      println("")
+      println("- Transferencia realizado com sucesso")
+      println("- ")
+      println("- Para a conta: ${destinationAccount.number}")
+      println("- Agencia: ${destinationAccount.agency}")
+      println("- ")
+      println("- Seu Saldo Atual: $balance")
+      println("- ")
+      println("- Saldo Atual do destinatário: ${destinationAccount.getBalance()}")
+      println("")
+    } else {
+
+      println("")
+      println("- Saldo Insuficiente :(")
+      println("- Faltam ${balance - value}")
+      println("")
+    }
+  }
 }
+
