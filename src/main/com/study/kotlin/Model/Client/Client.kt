@@ -1,7 +1,7 @@
 package com.study.kotlin.Model.Client
 
-class Client(
+abstract class Client(
 
 ){
-  
+
 }

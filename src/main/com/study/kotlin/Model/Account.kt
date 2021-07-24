@@ -17,13 +17,7 @@ abstract class Account(
   }
 
 
-  open fun getNumber():Int {
-    return this.number;
-  }
 
-  open fun getAgency():String {
-    return this.agency;
-  }
 
   open fun getBalance():Double {
     return balance;
@@ -84,7 +78,7 @@ abstract class Account(
       - Conta de Origem: ${this.number}
       - Saldo Atual: R$ ${this.getBalance()}
       -
-      - Conta de Destino: ${destinationAccount.getNumber()}
+      - Conta de Destino: ${destinationAccount.number}
       - Saldo Atual: R$ ${destinationAccount.getBalance()}
       =============================================
     """.trimIndent())
