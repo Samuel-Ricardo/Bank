@@ -8,4 +8,11 @@ abstract class Client(
 ){
 
   val segment: Segment
+    get() = if (account.getBalance() < 10.0) {
+      Segment.CLASSIC
+    } else {
+      Segment.VAN_GOGH
+    }
+
+    abstract fun printClientData()
 }

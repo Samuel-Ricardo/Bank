@@ -1,4 +1,4 @@
-package com.study.kotlin.Model;
+package com.study.kotlin.Model.Client;
 
 data class Address(
   val description:String = "",
