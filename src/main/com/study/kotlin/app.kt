@@ -1,10 +1,10 @@
-package com.study.kotlin.app;
+package com.study.kotlin;
 
 import java.util.Scanner;
 
-import com.study.kotlin.Model.*;
-import com.study.kotlin.Model.Client.Address;
-import com.study.kotlin.API.Accounts;
+import com.study.kotlin.Model.ContaPoupanca
+import com.study.kotlin.API.Accounts
+import com.study.kotlin.Model.Client.Address
 
 var scanner = Scanner(System.`in`);
 

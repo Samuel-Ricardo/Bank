@@ -56,4 +56,8 @@ class PessoaJuridica(
          =============================================
        """.trimIndent();
       }
+
+      fun main(args: Array<String>) {
+        println("bay")
+      }
 }
