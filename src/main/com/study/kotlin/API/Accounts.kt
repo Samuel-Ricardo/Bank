@@ -5,7 +5,13 @@ import kotlin.random.Random
 
 class Accounts{
 
- 
+  val accounts:MutableMap<Int, Account> = mutableMapOf();
+  private set
+  
+  private fun generateId():Int{
+
+    return Random.nextInt(0, Random.nextInt(0, 10000));
+  }
 
 
 }
