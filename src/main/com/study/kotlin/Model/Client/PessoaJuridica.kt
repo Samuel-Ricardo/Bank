@@ -3,12 +3,13 @@ package com.study.kotlin.Model.Client
 import com.study.kotlin.Model.Account
 
 class PessoaJuridica(
+  override val id:Int,
   val name:String,
   val pCNPJ:String,
   val socialReason:String,
   override var address:Address,
   override var account:Account,
-):Client(address, account) {
+):Client(id, address, account) {
 
   var CNPJ = pCNPJ
     private set(value) {

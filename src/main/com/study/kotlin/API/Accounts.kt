@@ -11,7 +11,6 @@ import kotlin.random.Random;
 class Accounts{
 
   val accounts:MutableMap<Int, Client> = mutableMapOf();
-  private set
 
   private fun generateId():Int{
 
@@ -32,7 +31,7 @@ class Accounts{
     accounts.put(pf.id, pf);
 
 
-    return accounts.get(pf.id);
+    return  accounts.get(pf.id) as PessoaFisica;
   }
 
 

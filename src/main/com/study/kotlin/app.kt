@@ -2,13 +2,14 @@ package com.study.kotlin.app;
 
 import java.util.Scanner;
 
-import com.study.kotlin.Model.ContaCorrente;
+import com.study.kotlin.Model.*;
 import com.study.kotlin.Model.Client.Address;
-
+import com.study.kotlin.API.Accounts;
 
 var scanner = Scanner(System.`in`);
-var online = true;
 
+var online = true;
+var accounts = Accounts();
 
 
 fun getAddress():Address{
@@ -120,6 +121,14 @@ fun createAccount(option:Int) {
 
       val address:Address = getAddress();
 
+      var logged = accounts.insertPessoaFisica(
+        ContaPoupanca(123, "123"),
+        name,
+        age,
+        address,
+        CPF);
+
+      logged.printClientData();
     }
 
     2 -> {

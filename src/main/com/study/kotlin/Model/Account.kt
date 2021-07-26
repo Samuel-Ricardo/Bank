@@ -10,6 +10,10 @@ abstract class Account(
 
   ): BankTransition {
 
+ //   constructor(number:Int, agency:String): this(number){
+//
+    //}
+
   abstract fun rate(): Double
 
   open fun checkBalance(value: Double):Boolean {
