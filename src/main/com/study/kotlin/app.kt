@@ -9,57 +9,7 @@ import com.study.kotlin.Model.Client.Address;
 var scanner = Scanner(System.`in`);
 var online = true;
 
-fun createAccount(option:Int) {
-  when(option){
-    1 -> {
-      println("""
 
-    ===============================
-      Digite seu nome:
-    ===============================
-
-    """.trimIndent())
-
-      val name:String = scanner.next();
-
-
-      println("""
-
-    ===============================
-      Digite seu CPF:
-    ===============================
-
-    """.trimIndent())
-
-      val CPF = scanner.next();
-
-      println("""
-
-    ===============================
-      Digite sua Idade:
-    ===============================
-
-    """.trimIndent())
-
-      val age = scanner.nextInt();
-
-      val address:Address = getAddress();
-
-    }
-
-    2 -> {
-      println("")
-    }
-
-    else -> println("""
-
-    ===============================
-      Selecione uma Opção válida
-    ===============================
-
-    """.trimIndent())
-  }
-}
 
 fun getAddress():Address{
 
@@ -132,6 +82,58 @@ fun getAddress():Address{
       city,
       state
     )
+}
+
+fun createAccount(option:Int) {
+  when(option){
+    1 -> {
+      println("""
+
+    ===============================
+      Digite seu nome:
+    ===============================
+
+    """.trimIndent())
+
+      val name:String = scanner.next();
+
+
+      println("""
+
+    ===============================
+      Digite seu CPF:
+    ===============================
+
+    """.trimIndent())
+
+      val CPF = scanner.next();
+
+      println("""
+
+    ===============================
+      Digite sua Idade:
+    ===============================
+
+    """.trimIndent())
+
+      val age = scanner.nextInt();
+
+      val address:Address = getAddress();
+
+    }
+
+    2 -> {
+      println("")
+    }
+
+    else -> println("""
+
+    ===============================
+      Selecione uma Opção válida
+    ===============================
+
+    """.trimIndent())
+  }
 }
 
 fun main() {
