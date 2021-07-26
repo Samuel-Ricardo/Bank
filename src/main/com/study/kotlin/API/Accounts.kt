@@ -17,7 +17,7 @@ class Accounts{
     return Random.nextInt(0, Random.nextInt(0, 10000));
   }
 
-  fun insertPessoaFisica(account:Account, name:String, age:Int, address:Address, cpf:String):PessoaFisica{
+  fun insertPessoaFisica(account:Account, name:String, age:Int, address:Address, cpf:String):PessoaFisica?{
 
     var pf:PessoaFisica = PessoaFisica(
       generateId(),
@@ -31,7 +31,7 @@ class Accounts{
     accounts.put(pf.id, pf);
 
 
-    return  accounts.get(pf.id) as PessoaFisica;
+    return  accounts.get(pf.id) as PessoaFisica?;
   }
 
 
