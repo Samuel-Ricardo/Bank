@@ -1,11 +1,14 @@
 package com.study.kotlin.app
 
 import java.util.Scanner
+import com.study.kotlin.Model.ContaCorrente
+
+
 
 fun createAccount(option:Int) {
   when(option){
     1 -> {
-      
+
     }
 
     2 - > {
