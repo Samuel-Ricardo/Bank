@@ -1,7 +1,10 @@
-package com.study.kotlin.app
+package com.study.kotlin.app;
 
 import java.util.Scanner;
+
 import com.study.kotlin.Model.ContaCorrente;
+import com.study.kotlin.Model.Client.Address;
+
 
 var scanner = Scanner(System.`in`);
 var online = true;
@@ -40,75 +43,7 @@ fun createAccount(option:Int) {
 
       val age = scanner.nextInt();
 
-      println("""
-
-    ===============================
-      Digite sua Rua:
-    ===============================
-
-    """.trimIndent())
-
-      val street = scanner.next();
-
-      println("""
-
-      ===============================
-        Digite Numero da Casa:
-      ===============================
-
-      """.trimIndent())
-
-        val houseNumber = scanner.nextInt();
-
-      println("""
-
-    ===============================
-      Digite seu CEP:
-    ===============================
-
-    """.trimIndent())
-
-      val CEP = scanner.next();
-
-
-      println("""
-
-    ===============================
-      Digite sua Cidade:
-    ===============================
-
-    """.trimIndent())
-
-      val city = scanner.next();
-
-      println("""
-
-      ===============================
-        Digite seu Estado:
-      ===============================
-
-      """.trimIndent())
-
-        val state = scanner.next();
-
-        println("""
-
-      =========================================
-        Digite uma descrição extra (Opcional):
-      =========================================
-
-      """.trimIndent())
-
-        val desc = scanner.next();
-
-      val address:Address = Address(
-        desc,
-        street,
-        houseNumber,
-        CEP,
-        city,
-        state
-      )
+      val address:Address = getAddress();
 
     }
 
@@ -124,6 +59,79 @@ fun createAccount(option:Int) {
 
     """.trimIndent())
   }
+}
+
+fun getAddress():Address{
+
+  println("""
+
+  ===============================
+    Digite sua Rua:
+  ===============================
+
+  """.trimIndent())
+
+    val street = scanner.next();
+
+    println("""
+
+    ===============================
+      Digite Numero da Casa:
+    ===============================
+
+    """.trimIndent())
+
+      val houseNumber = scanner.nextInt();
+
+    println("""
+
+  ===============================
+    Digite seu CEP:
+  ===============================
+
+  """.trimIndent())
+
+    val CEP = scanner.next();
+
+
+    println("""
+
+  ===============================
+    Digite sua Cidade:
+  ===============================
+
+  """.trimIndent())
+
+    val city = scanner.next();
+
+    println("""
+
+    ===============================
+      Digite seu Estado:
+    ===============================
+
+    """.trimIndent())
+
+      val state = scanner.next();
+
+      println("""
+
+    =========================================
+      Digite uma descrição extra (Opcional):
+    =========================================
+
+    """.trimIndent())
+
+      val desc = scanner.next();
+
+    return Address(
+      desc,
+      street,
+      houseNumber,
+      CEP,
+      city,
+      state
+    )
 }
 
 fun main() {
