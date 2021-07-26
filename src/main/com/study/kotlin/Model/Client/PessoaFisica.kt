@@ -3,12 +3,13 @@ package com.study.kotlin.Model.Client
 import com.study.kotlin.Model.Account
 
 class PessoaFisica(
+  override val id:Int,
   val name:String,
   val age:Int,
   override var address:Address,
   val CPF:String,
   override var account:Account
-):Client(address, account) {
+):Client(id, address, account) {
 
   override fun printClientData(){
 
@@ -16,6 +17,7 @@ class PessoaFisica(
       =============================================
       - Pessoa Física
       ---------------------------------------------
+      - Idade: ${id}
       - Nome: ${name}
       - Idade: ${age}
       - CPF: ${CPF}
