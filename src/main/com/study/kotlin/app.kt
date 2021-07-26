@@ -2,6 +2,26 @@ package com.study.kotlin.app
 
 import java.util.Scanner
 
+fun createAccount(option:Int) {
+  when(option){
+    1 -> {
+      
+    }
+
+    2 - > {
+
+    }
+
+    else -> println("""
+
+    ===============================
+      Selecione uma Opção válida
+    ===============================
+
+    """.trimIndent())
+  }
+}
+
 fun main() {
 
   var scanner = Scanner(System.`in`);
@@ -11,7 +31,8 @@ fun main() {
   println("Welcome to Bank :)")
 
 
-  while(online){
+
+  fun runApp(){
 
     println("")
     println("Qual Operação deseja realizar?")
@@ -31,13 +52,26 @@ fun main() {
 
       1 -> println("Serviço Indisponível");
       2 -> {
-        println("")
-        println("Serviço Indisponível");
-        println("")
+        println("""
+        ===============================
+          (1) - Pessoa Física - PF
+          (2) - Pessoa Jurídica - PJ
+        ===============================
+        """.trimIndent())
+
+        option = scanner.nextInt();
+
+        createAccount(option);
       }
       3 -> {
         online = false
-        println("")
+        println("""
+
+        ===============================
+          Selecione uma Opção válida
+        ===============================
+
+        """.trimIndent())
       }
 
       else -> {
@@ -46,5 +80,11 @@ fun main() {
         println("")
       }
     }
+  }
+
+
+  while(online){
+
+    runApp();
   }
 }
