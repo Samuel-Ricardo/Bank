@@ -1,3 +1,11 @@
-D:\Visual Studio Code\Projects\Kotlin\Bank\src\main\com\study\kotlin\Model\Client\PessoaJuridica.kt
 D:\Visual Studio Code\Projects\Kotlin\Bank\src\main\com\study\kotlin\Model\Client\PessoaFisica.kt
+D:\Visual Studio Code\Projects\Kotlin\Bank\src\main\com\study\kotlin\Model\Client\PessoaJuridica.kt
+D:\Visual Studio Code\Projects\Kotlin\Bank\src\main\com\study\kotlin\Model\Account.kt
+D:\Visual Studio Code\Projects\Kotlin\Bank\src\main\com\study\kotlin\Interface\BankTransition.kt
+D:\Visual Studio Code\Projects\Kotlin\Bank\src\main\com\study\kotlin\API\Accounts.kt
+D:\Visual Studio Code\Projects\Kotlin\Bank\src\main\com\study\kotlin\Model\Client\Address.kt
+D:\Visual Studio Code\Projects\Kotlin\Bank\src\main\com\study\kotlin\Model\ContaPoupanca.kt
+D:\Visual Studio Code\Projects\Kotlin\Bank\src\main\com\study\kotlin\Model\ContaCorrente.kt
 D:\Visual Studio Code\Projects\Kotlin\Bank\src\main\com\study\kotlin\App.kt
+D:\Visual Studio Code\Projects\Kotlin\Bank\src\main\com\study\kotlin\Model\Client\Segment.kt
+D:\Visual Studio Code\Projects\Kotlin\Bank\src\main\com\study\kotlin\Model\Client\Client.kt

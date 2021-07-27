@@ -16,7 +16,7 @@ public class App{
   var scanner = Scanner(System.`in`);
 
   var online = true;
-  var logged:Client? = null;
+  val logged:Client? = null;
   var accounts = Accounts();
 
   fun invalidOption(){
@@ -27,7 +27,7 @@ public class App{
   ===============================
 
   """.trimIndent())
-}
+  }
 
   @JvmStatic
    fun main(args: Array<String>) {
@@ -330,6 +330,6 @@ public class App{
       """.trimIndent())
     }
   }
-}
+ }
 }
 
