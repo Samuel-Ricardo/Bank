@@ -5,6 +5,8 @@ import java.util.Scanner;
 import com.study.kotlin.Model.*
 import com.study.kotlin.API.Accounts
 import com.study.kotlin.Model.Client.Address
+import com.study.kotlin.Model.Client.Client
+import kotlin.random.Random
 
 
 public class App{
@@ -14,7 +16,18 @@ public class App{
   var scanner = Scanner(System.`in`);
 
   var online = true;
+  var logged:Client? = null;
   var accounts = Accounts();
+
+  fun invalidOption(){
+     println("""
+
+  ===============================
+    Selecione uma Opção válida
+  ===============================
+
+  """.trimIndent())
+}
 
   @JvmStatic
    fun main(args: Array<String>) {
@@ -60,13 +73,6 @@ public class App{
         }
         3 -> {
           online = false
-          println("""
-
-          ===============================
-            Selecione uma Opção válida
-          ===============================
-
-          """.trimIndent())
         }
 
         else -> {
@@ -170,7 +176,45 @@ public class App{
   }
 
   fun getAccount():Account{
+    println("""
 
+          ===============================
+            (1) - Conta Corrente
+            (2) - Conta Poupança
+          ===============================
+
+          """.trimIndent())
+
+          var option = scanner.nextInt();
+
+          when(option){
+
+            1 -> return ContaCorrente(Random.nextInt(100000, 999999), getAgency());
+
+            2 -> return ContaPoupanca(Random.nextInt(100000, 999999), getAgency());
+
+            else -> {
+              invalidOption();
+
+              return ContaCorrente(123456, "Inter")
+            }
+          }
+  }
+
+  fun getAgency():String{
+    println("""
+
+              ===============================
+                Digite sua Agencia:
+              ===============================
+
+              """.trimIndent())
+
+                val agency:String = scanner.next();
+
+                Thread.sleep(500L)
+
+                return agency;
   }
 
   fun createAccount(option:Int) {
@@ -216,7 +260,7 @@ public class App{
 
         val account:Account = getAccount();
 
-        var logged = accounts.insertPessoaFisica(
+        logged = accounts.insertPessoaFisica(
           account,
           name,
           age,
@@ -227,7 +271,54 @@ public class App{
       }
 
       2 -> {
-        println("")
+        println("""
+
+      ===============================
+        Digite seu nome:
+      ===============================
+
+      """.trimIndent())
+
+        val name:String = scanner.next();
+
+        Thread.sleep(500L)
+
+        println("""
+
+      ===============================
+        Digite seu CNPJ:
+      ===============================
+
+      """.trimIndent())
+
+        val CNPJ = scanner.next();
+
+        Thread.sleep(500L)
+
+        println("""
+
+      ===============================
+        Digite sua Razão social:
+      ===============================
+
+      """.trimIndent())
+
+        val reason = scanner.next();
+
+        Thread.sleep(500L)
+
+        val address:Address = getAddress();
+
+        val account:Account = getAccount();
+
+        logged = accounts.insertPessoaJuridica(
+          account,
+          name,
+          CNPJ,
+          reason,
+          address);
+
+        logged.printClientData();
       }
 
       else -> println("""

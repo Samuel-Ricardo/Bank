@@ -1,0 +1,3 @@
+D:\Visual Studio Code\Projects\Kotlin\Bank\src\main\com\study\kotlin\Model\Client\PessoaJuridica.kt
+D:\Visual Studio Code\Projects\Kotlin\Bank\src\main\com\study\kotlin\Model\Client\PessoaFisica.kt
+D:\Visual Studio Code\Projects\Kotlin\Bank\src\main\com\study\kotlin\App.kt
