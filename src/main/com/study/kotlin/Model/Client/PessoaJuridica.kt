@@ -23,6 +23,7 @@ class PessoaJuridica(
         =============================================
         - Pessoa Jurídica
         ---------------------------------------------
+        - Id: ${id}
         - Nome: ${name}
         - Razão Social: ${socialReason}
         - CNPJ: ${CNPJ}
@@ -43,6 +44,7 @@ class PessoaJuridica(
          =============================================
          - Pessoa Jurídica
          ---------------------------------------------
+         - Id: ${id}
          - Nome: ${name}
          - Razão Social: ${socialReason}
          - CNPJ: ${CNPJ}
@@ -55,9 +57,5 @@ class PessoaJuridica(
          - Agencia: ${this.account.agency}
          =============================================
        """.trimIndent();
-      }
-
-      fun main(args: Array<String>) {
-        println("bay")
       }
 }
