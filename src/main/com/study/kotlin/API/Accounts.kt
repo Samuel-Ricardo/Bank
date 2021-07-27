@@ -11,7 +11,7 @@ import com.study.kotlin.App
 
 class Accounts{
 
-  val accounts:MutableMap<Int, Client> = mutableMapOf();
+  val all:MutableMap<Int, Client> = mutableMapOf();
 
   private fun generateId():Int{
 
@@ -29,9 +29,9 @@ class Accounts{
       account
     );
 
-    accounts.put(pf.id, pf);
+    all.put(pf.id, pf);
 
-    return  accounts.get(pf.id) as PessoaFisica;
+    return  all.get(pf.id) as PessoaFisica;
   }
 
   fun insertPessoaJuridica(
@@ -50,9 +50,9 @@ class Accounts{
       socialReason = reason,
     )
 
-    accounts.put(pj.id, pj);
+    all.put(pj.id, pj);
 
-    return accounts.get(pj.id) as PessoaJuridica;
+    return all.get(pj.id) as PessoaJuridica;
   }
 
 

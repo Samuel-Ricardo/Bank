@@ -16,7 +16,6 @@ public class App{
   var scanner = Scanner(System.`in`);
 
   var online = true;
-  val logged:Client? = null;
   var accounts = Accounts();
 
   fun invalidOption(){
@@ -56,7 +55,57 @@ public class App{
 
       when(option){
 
-        1 -> println("Serviço Indisponível");
+        1 -> {
+          /*
+          val agency = getAgency();
+
+          println("""
+
+          ===============================
+            Digite o número da conta bancária:
+          ===============================
+
+          """.trimIndent())
+
+          val number = scanner.nextInt();
+
+            Thread.sleep(500L)
+*/
+
+            println("""
+
+            ===================================
+              Digite o Seu Identificador - ID:
+            ===================================
+
+            """.trimIndent())
+
+            val id = scanner.nextInt();
+
+              Thread.sleep(500L)
+
+            when(accounts.all.get(id)){
+
+               ->{
+
+                val logged = client
+
+              }
+
+              null -> {
+
+                println("""
+
+            ===============================
+              Conta não encontrada
+            ===============================
+
+            """.trimIndent())
+
+              }
+
+            }
+        }
         2 -> {
           println("""
 
@@ -260,14 +309,12 @@ public class App{
 
         val account:Account = getAccount();
 
-        logged = accounts.insertPessoaFisica(
+        accounts.insertPessoaFisica(
           account,
           name,
           age,
           address,
-          CPF);
-
-        logged.printClientData();
+          CPF).printClientData();
       }
 
       2 -> {
@@ -311,14 +358,13 @@ public class App{
 
         val account:Account = getAccount();
 
-        logged = accounts.insertPessoaJuridica(
+        accounts.insertPessoaJuridica(
           account,
           name,
           CNPJ,
           reason,
-          address);
-
-        logged.printClientData();
+          address)
+            .printClientData();
       }
 
       else -> println("""
