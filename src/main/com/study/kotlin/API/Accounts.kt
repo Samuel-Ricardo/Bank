@@ -15,7 +15,7 @@ class Accounts{
 
   private fun generateId():Int{
 
-    return Random.nextInt(0, Random.nextInt(0, 1000000));
+    return Random.nextInt(0, Random.nextInt(0, 10000));
   }
 
   fun insertPessoaFisica(account:Account, name:String, age:Int, address:Address, cpf:String):PessoaFisica{

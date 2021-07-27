@@ -6,6 +6,7 @@ import com.study.kotlin.Model.*
 import com.study.kotlin.API.Accounts
 import com.study.kotlin.Model.Client.Address
 import com.study.kotlin.Model.Client.Client
+import com.study.kotlin.Model.Client.PessoaFisica
 import kotlin.random.Random
 
 
@@ -84,15 +85,17 @@ public class App{
 
               Thread.sleep(500L)
 
-            when(accounts.all.get(id)){
+              var client:Client? = accounts.all.get(id);
 
-               ->{
+            when(client == null){
 
-                val logged = client
+              true ->{
+
+               showPlatform(client);
 
               }
 
-              null -> {
+              false -> {
 
                 println("""
 
@@ -264,6 +267,59 @@ public class App{
                 Thread.sleep(500L)
 
                 return agency;
+  }
+
+  fun showPlatform(client:Client){
+
+    while(online) {
+
+      println("""
+
+    ===============================
+    |  (1) - Deposito             |
+    |  (2) - Saque                |
+    |  (3) - Transferência        |
+    |  (4) - Sair                 |
+    ===============================
+
+    """.trimIndent())
+
+    var option = scanner.nextInt();
+
+    when(option){
+
+      1 -> {
+        
+      }
+
+      2 -> {
+
+      }
+
+      3 -> {
+
+      }
+
+      4 -> {
+        println("""
+
+
+          ======================================
+            Obrigado Por usar nosso Sistema :)
+          ======================================
+
+        """.trimIndent())
+
+        online = false;
+      }
+
+      else -> {
+        invalidOption();
+      }
+    }
+
+    }
+
   }
 
   fun createAccount(option:Int) {
