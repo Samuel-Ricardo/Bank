@@ -289,14 +289,73 @@ public class App{
     when(option){
 
       1 -> {
-        
+
+        println("""
+
+          ================================
+            Digite o Valor:
+          ================================
+
+        """.trimIndent())
+
+        val value = scanner.nextDouble();
+
+        Thread.sleep(500L);
+
+        client.account.deposit(value)
+
+
       }
 
       2 -> {
 
+        println("""
+
+          ================================
+            Digite o Valor:
+          ================================
+
+        """.trimIndent())
+
+        val value = scanner.nextDouble();
+
+        Thread.sleep(500L);
+
+        client.account.withdraw(value)
+
       }
 
       3 -> {
+
+        println("""
+
+
+          ================================
+            Digite o ID do destinatário:
+          ================================
+
+        """.trimIndent())
+
+        val destID:Int = scanner.nextInt();
+
+        Thread.sleep(500L);
+
+        val destination:Client? = accounts.all.get(destID);
+
+        println("""
+
+          ================================
+            Digite o Valor:
+          ================================
+
+        """.trimIndent())
+
+        val value = scanner.nextDouble();
+
+        Thread.sleep(500L);
+
+        client.account.transfer(destination!!.account, value)
+
 
       }
 
