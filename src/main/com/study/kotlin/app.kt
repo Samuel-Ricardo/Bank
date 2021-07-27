@@ -87,15 +87,11 @@ public class App{
 
               var client:Client? = accounts.all.get(id);
 
-            when(client){
-
-              else ->{
+            if(client != null){
 
                showPlatform(client!!);
 
-              }
-
-              null -> {
+              } else {
 
                 println("""
 
@@ -108,7 +104,7 @@ public class App{
               }
 
             }
-        }
+
         2 -> {
           println("""
 
