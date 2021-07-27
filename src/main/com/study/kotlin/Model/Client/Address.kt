@@ -1,5 +1,7 @@
 package com.study.kotlin.Model.Client;
 
+
+
 data class Address(
   val description:String = "",
   val street:     String,
@@ -18,4 +20,6 @@ data class Address(
       """.trimIndent();
     }
   }
+
+
 }

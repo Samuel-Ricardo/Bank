@@ -6,209 +6,216 @@ import com.study.kotlin.Model.ContaPoupanca
 import com.study.kotlin.API.Accounts
 import com.study.kotlin.Model.Client.Address
 
-var scanner = Scanner(System.`in`);
 
-var online = true;
-var accounts = Accounts();
+public class App{
 
+ companion object{
 
-fun getAddress():Address{
+  var scanner = Scanner(System.`in`);
 
-  println("""
+  var online = true;
+  var accounts = Accounts();
 
-  ===============================
-    Digite sua Rua:
-  ===============================
-
-  """.trimIndent())
-
-    val street = scanner.next();
-
-    println("""
-
-    ===============================
-      Digite Numero da Casa:
-    ===============================
-
-    """.trimIndent())
-
-      val houseNumber = scanner.nextInt();
-
-    println("""
-
-  ===============================
-    Digite seu CEP:
-  ===============================
-
-  """.trimIndent())
-
-    val CEP = scanner.next();
+  @JvmStatic
+   fun main(args: Array<String>) {
 
 
-    println("""
-
-  ===============================
-    Digite sua Cidade:
-  ===============================
-
-  """.trimIndent())
-
-    val city = scanner.next();
-
-    println("""
-
-    ===============================
-      Digite seu Estado:
-    ===============================
-
-    """.trimIndent())
-
-      val state = scanner.next();
-
-      println("""
-
-    =========================================
-      Digite uma descrição extra (Opcional):
-    =========================================
-
-    """.trimIndent())
-
-      val desc = scanner.next();
-
-    return Address(
-      desc,
-      street,
-      houseNumber,
-      CEP,
-      city,
-      state
-    )
-}
-
-fun createAccount(option:Int) {
-  when(option){
-    1 -> {
-      println("""
-
-    ===============================
-      Digite seu nome:
-    ===============================
-
-    """.trimIndent())
-
-      val name:String = scanner.next();
+    println("")
+    println("Welcome to Bank :)")
 
 
-      println("""
 
-    ===============================
-      Digite seu CPF:
-    ===============================
+    fun runApp(){
 
-    """.trimIndent())
-
-      val CPF = scanner.next();
-
-      println("""
-
-    ===============================
-      Digite sua Idade:
-    ===============================
-
-    """.trimIndent())
-
-      val age = scanner.nextInt();
-
-      val address:Address = getAddress();
-
-      var logged = accounts.insertPessoaFisica(
-        ContaPoupanca(123, "123"),
-        name,
-        age,
-        address,
-        CPF);
-
-      logged.printClientData();
-    }
-
-    2 -> {
       println("")
+      println("Qual Operação deseja realizar?")
+      println("")
+      println("===============================")
+      println("")
+      println("(1) - Logar na minha conta")
+      println("(2) - Criar uma conta")
+      println("(3) - Sair")
+      println("")
+      println("================================")
+      println("")
+
+      var option = scanner.nextInt();
+
+      when(option){
+
+        1 -> println("Serviço Indisponível");
+        2 -> {
+          println("""
+
+          ===============================
+            (1) - Pessoa Física - PF
+            (2) - Pessoa Jurídica - PJ
+          ===============================
+
+          """.trimIndent())
+
+          option = scanner.nextInt();
+
+          createAccount(option);
+        }
+        3 -> {
+          online = false
+          println("""
+
+          ===============================
+            Selecione uma Opção válida
+          ===============================
+
+          """.trimIndent())
+        }
+
+        else -> {
+          println("")
+          println("Serviço Indisponível ou inexistente, tente outro...");
+          println("")
+        }
+      }
     }
 
-    else -> println("""
+
+    while(online){
+
+      runApp();
+    }
+  }
+
+  fun getAddress():Address{
+
+    println("""
 
     ===============================
-      Selecione uma Opção válida
+      Digite sua Rua:
     ===============================
 
     """.trimIndent())
+
+      val street = scanner.next();
+
+      println("""
+
+      ===============================
+        Digite Numero da Casa:
+      ===============================
+
+      """.trimIndent())
+
+        val houseNumber = scanner.nextInt();
+
+      println("""
+
+    ===============================
+      Digite seu CEP:
+    ===============================
+
+    """.trimIndent())
+
+      val CEP = scanner.next();
+
+
+      println("""
+
+    ===============================
+      Digite sua Cidade:
+    ===============================
+
+    """.trimIndent())
+
+      val city = scanner.next();
+
+      println("""
+
+      ===============================
+        Digite seu Estado:
+      ===============================
+
+      """.trimIndent())
+
+        val state = scanner.next();
+
+        println("""
+
+      =========================================
+        Digite uma descrição extra (Opcional):
+      =========================================
+
+      """.trimIndent())
+
+        val desc = scanner.next();
+
+      return Address(
+        desc,
+        street,
+        houseNumber,
+        CEP,
+        city,
+        state
+      )
   }
-}
 
-fun main() {
-
-
-
-  println("")
-  println("Welcome to Bank :)")
-
-
-
-  fun runApp(){
-
-    println("")
-    println("Qual Operação deseja realizar?")
-    println("")
-    println("===============================")
-    println("")
-    println("(1) - Logar na minha conta")
-    println("(2) - Criar uma conta")
-    println("(3) - Sair")
-    println("")
-    println("================================")
-    println("")
-
-    var option = scanner.nextInt();
-
+  fun createAccount(option:Int) {
     when(option){
+      1 -> {
+        println("""
 
-      1 -> println("Serviço Indisponível");
+      ===============================
+        Digite seu nome:
+      ===============================
+
+      """.trimIndent())
+
+        val name:String = scanner.next();
+
+
+        println("""
+
+      ===============================
+        Digite seu CPF:
+      ===============================
+
+      """.trimIndent())
+
+        val CPF = scanner.next();
+
+        println("""
+
+      ===============================
+        Digite sua Idade:
+      ===============================
+
+      """.trimIndent())
+
+        val age = scanner.nextInt();
+
+        val address:Address = getAddress();
+
+        var logged = accounts.insertPessoaFisica(
+          ContaPoupanca(123, "123"),
+          name,
+          age,
+          address,
+          CPF);
+
+        logged.printClientData();
+      }
+
       2 -> {
-        println("""
-
-        ===============================
-          (1) - Pessoa Física - PF
-          (2) - Pessoa Jurídica - PJ
-        ===============================
-
-        """.trimIndent())
-
-        option = scanner.nextInt();
-
-        createAccount(option);
-      }
-      3 -> {
-        online = false
-        println("""
-
-        ===============================
-          Selecione uma Opção válida
-        ===============================
-
-        """.trimIndent())
-      }
-
-      else -> {
-        println("")
-        println("Serviço Indisponível ou inexistente, tente outro...");
         println("")
       }
+
+      else -> println("""
+
+      ===============================
+        Selecione uma Opção válida
+      ===============================
+
+      """.trimIndent())
     }
   }
-
-
-  while(online){
-
-    runApp();
-  }
 }
+}
+

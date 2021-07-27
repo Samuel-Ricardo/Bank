@@ -6,7 +6,7 @@ import com.study.kotlin.Model.Client.Client;
 import com.study.kotlin.Model.Client.Address;
 
 import kotlin.random.Random;
-
+import com.study.kotlin.App
 
 class Accounts{
 
@@ -29,7 +29,6 @@ class Accounts{
     );
 
     accounts.put(pf.id, pf);
-
 
     return  accounts.get(pf.id) as PessoaFisica;
   }
