@@ -11,15 +11,15 @@ data class Address(
   val state:      String,
 ){
 
-  init {
-    require(cep.trim().isBlank()) {
-      """
-      =================================
-      - O Campo CEP não Pode ser Nulo -
-      =================================
-      """.trimIndent();
-    }
-  }
+ // init {
+ //   require(cep.trim().isBlank()) {
+ //     """
+ //     =================================
+ //     - O Campo CEP não Pode ser Nulo -
+ //     =================================
+ //     """.trimIndent();
+ //   }
+ // }
 
 
 }

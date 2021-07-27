@@ -2,7 +2,7 @@ package com.study.kotlin;
 
 import java.util.Scanner;
 
-import com.study.kotlin.Model.ContaPoupanca
+import com.study.kotlin.Model.*
 import com.study.kotlin.API.Accounts
 import com.study.kotlin.Model.Client.Address
 
@@ -96,6 +96,8 @@ public class App{
 
       val street = scanner.next();
 
+      Thread.sleep(500L)
+
       println("""
 
       ===============================
@@ -106,6 +108,8 @@ public class App{
 
         val houseNumber = scanner.nextInt();
 
+        Thread.sleep(500L)
+
       println("""
 
     ===============================
@@ -115,6 +119,8 @@ public class App{
     """.trimIndent())
 
       val CEP = scanner.next();
+
+      Thread.sleep(500L)
 
 
       println("""
@@ -127,6 +133,8 @@ public class App{
 
       val city = scanner.next();
 
+      Thread.sleep(500L)
+
       println("""
 
       ===============================
@@ -136,6 +144,8 @@ public class App{
       """.trimIndent())
 
         val state = scanner.next();
+
+        Thread.sleep(500L)
 
         println("""
 
@@ -147,6 +157,8 @@ public class App{
 
         val desc = scanner.next();
 
+        Thread.sleep(500L)
+
       return Address(
         desc,
         street,
@@ -155,6 +167,10 @@ public class App{
         city,
         state
       )
+  }
+
+  fun getAccount():Account{
+
   }
 
   fun createAccount(option:Int) {
@@ -170,6 +186,7 @@ public class App{
 
         val name:String = scanner.next();
 
+        Thread.sleep(500L)
 
         println("""
 
@@ -181,6 +198,8 @@ public class App{
 
         val CPF = scanner.next();
 
+        Thread.sleep(500L)
+
         println("""
 
       ===============================
@@ -191,10 +210,14 @@ public class App{
 
         val age = scanner.nextInt();
 
+        Thread.sleep(500L)
+
         val address:Address = getAddress();
 
+        val account:Account = getAccount();
+
         var logged = accounts.insertPessoaFisica(
-          ContaPoupanca(123, "123"),
+          account,
           name,
           age,
           address,
